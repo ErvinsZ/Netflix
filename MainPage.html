@@ -108,6 +108,9 @@
             <li class="nav-item">
                 <a class="nav-link" href="account.html">Account information</a>
             </li>
+            <li class="nav-item">
+              <a class="nav-link" href="backoffice.html">B/O</a>
+          </li>
           </ul>
           <form class="form-inline my-2 my-lg-0">
             <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
@@ -200,6 +203,48 @@
           </div>
           </div>
       </footer>
+
+
+      <script>
+        /*
+        let pass = 'user12:5s*f!thGyuC8xm&h'
+        let encoded = btoa(pass)
+        let url = 'https://striveschool.herokuapp.com/api/movies/'
+        const getMovies = async() => {
+          let response = await fetch(url,{
+          headers : new Headers({ 
+            "Content-Type": "application/json",
+            "Authorization" : "Basic" + encoded,
+          })
+          })
+          
+
+        }
+        window.onload = getMovies
+          console.log(response)
+
+          */
+
+          const url='https://striveschool.herokuapp.com/api/product/'
+let givenstring='user20:Y2cJZ38UPMmnPdAW'
+let encoded=window.btoa(givenstring)
+const getProducts=async()=>{
+    
+    let response = await fetch(url,{
+        method:"GET",
+        
+        headers: new Headers({
+            'Content-Type':'application/json',
+            'Authorization':'Basic '+encoded
+        }),
+
+    })//this is getting response from api fetching 
+    return await response.json()//this is returning the result of thr promise in a usable format
+}
+
+console.log(response)
+        
+      </script>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
